@@ -6,8 +6,7 @@ class Pokemon
     @name = pokemon[:name]
     @type = pokemon[:type]
     @db = pokemon[:db]
-    # @hp = hp
-    #  @hp = pokemon[:hp]
+    @hp = pokemon[:hp]
   end
 
   def self.save(name, type, db)
