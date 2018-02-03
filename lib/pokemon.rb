@@ -19,7 +19,7 @@ class Pokemon
     pk_hp =  db.execute("SELECT hp FROM Pokemon WHERE id = ?", [id])
     binding.pry
     pk_new = Pokemon.new(pk_hash, 60)
-    binding.pry
+    # binding.pry
   end
 
   def alter_hp(hp_new, db)
