@@ -19,7 +19,7 @@ class Pokemon
     Pokemon.new(pk_hash, 60)
   end
 
-  # def BONUS
-  #   db.execute("")
-  # end
+  def alter_hp(hp_new, db)
+    db.execute("UPDATE Pokemon SET hp = ? WHERE id= ?", [hp_new, self.id])
+  end
 end
