@@ -17,4 +17,8 @@ class Pokemon
     pk_hash = {id: pk[0][0], name: pk[0][1], type:pk[0][2], db: db}
     Pokemon.new(pk_hash)
   end
+
+  def BONUS 
+    db.execute("ALTER TABLE pokemon ADD COLUMN hp INTEGER NOT NULL DEFAULT(60)")
+  end
 end
