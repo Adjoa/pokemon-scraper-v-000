@@ -1,11 +1,12 @@
 class Pokemon
   attr_accessor :id, :name, :type, :db
 
-  def initialize(pokemon)
+  def initialize(pokemon, hp = nil)
     @id = pokemon[:id]
     @name = pokemon[:name]
     @type = pokemon[:type]
     @db = pokemon[:db]
+    @hp = hp
   end
 
   def self.save(name, type, db)
@@ -18,7 +19,7 @@ class Pokemon
     Pokemon.new(pk_hash)
   end
 
-  def BONUS 
+  def BONUS
     db.execute("ALTER TABLE pokemon ADD COLUMN hp INTEGER NOT NULL DEFAULT(60)")
   end
 end
