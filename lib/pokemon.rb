@@ -15,11 +15,8 @@ class Pokemon
 
   def self.find(id, db)
     pk = db.execute("SELECT * FROM Pokemon WHERE id = ?", [id])
-    pk_hash = {id: pk[0][0], name: pk[0][1], type:pk[0][2], db: db, hp: pk[0][3]}
-    # pk_hp =  db.execute("SELECT hp FROM Pokemon WHERE id = ?", [id])
-    # binding.pry
+    pk_hash = {id: pk[0][0], name: pk[0][1], type:pk[0][2], db: db, hp: pk[0][3]
     pk_new = Pokemon.new(pk_hash)
-    # binding.pry
   end
 
   def alter_hp(hp_new, db)
