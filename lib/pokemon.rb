@@ -18,6 +18,7 @@ class Pokemon
     pk = db.execute("SELECT * FROM Pokemon WHERE id = ?", [id])
     pk_hash = {id: pk[0][0], name: pk[0][1], type:pk[0][2], db: db}
     Pokemon.new(pk_hash, 60)
+    binding.pry
   end
 
   def alter_hp(hp_new, db)
